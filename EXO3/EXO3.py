@@ -3,11 +3,10 @@ import itertools
 import string
 import zlib
 
-def brute_force_zip(filename):
+def forcer_mot_de_passe(filename):
     alphabet = string.ascii_lowercase
 
     with zipfile.ZipFile(filename, "r") as archive:
-        # On récupère le premier fichier contenu dans le ZIP
         fichier = archive.infolist()[0]
 
         longueur = 1
@@ -31,4 +30,4 @@ def brute_force_zip(filename):
             longueur += 1
 
 
-brute_force_zip("archive.zip")
+forcer_mot_de_passe("archive.zip")

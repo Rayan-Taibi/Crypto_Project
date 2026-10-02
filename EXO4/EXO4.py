@@ -4,7 +4,7 @@ server = "51.38.191.157"
 port = 12345
 
 trouve = False
-for i in range(10000):
+for i in range(7300,10000):
 
     code = str(i)  #convertir le nombre en chaine de caractères
     code = code.zfill(4)
@@ -12,7 +12,7 @@ for i in range(10000):
     ma_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     ma_socket.connect((server, port))
 
-    print("\rEnvoi du code :", code , end="")  # on affiche le code en cours d'envoi
+    print("\rEnvoi du code :", code , end="")  #end sert à ne pas passer à la ligne après l'affichage du code
 
     ligne = ma_socket.recv(1024)
 

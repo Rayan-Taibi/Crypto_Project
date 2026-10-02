@@ -166,25 +166,30 @@ if __name__ == "__main__":
  
     print("Nombre de lettres :", len(nettoyer_text(texte_original)))
  
-    # ---------- César ----------
     c = chiffrer_cesar(texte_original, 3)
-    print("\n=== CESAR ===")
-    print("Chiffré   :", c)
-    print("Déchiffré :", dechiffrer_cesar(c, 3))
+    print("Chiffre   :", c)
+    print("\n")
+    print("\n")
+    
+    print("Déchiffre :", dechiffrer_cesar(c, trouve_decalage(c)))
  
-    print("\nFréquences des lettres du chiffré :")
+    print("\nFrequences des lettres du chiffre :")
     freq = frequence_lettre(c)
     for i in range(26):
         print(" ", alphabet[i], round(freq[i], 1), "%")
-    print("IC du chiffré :", round(indice_coincidence(c), 4))
+    print("IC du chiffre :", round(indice_coincidence(c), 4))
  
     k, clair = attaque_cesar(c)
     print("Attaque : décalage trouvé =", k)
     print("Texte retrouvé :", clair)
+
  
-    # ---------- Vigenère ----------
+
+
+
+
     v = chiffrer_vigenere(texte_original, "cle")
-    print("\n=== VIGENERE ===")
+    
     print("Chiffré   :", v)
     print("Déchiffré :", dechiffrer_vigenere(v, "cle"))
     print("IC du chiffré :", round(indice_coincidence(v), 4))
